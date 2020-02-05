@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Framework/Input.h"
 #include "Framework/GameObject.h"
+#include "Player.h"
 #include <string.h>
 #include <iostream>
 
