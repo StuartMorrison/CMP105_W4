@@ -28,13 +28,13 @@ void Player::handleInput(float dt)
 	}
 	if (input->isKeyDown(sf::Keyboard::Up))
 	{
-		speedy = 200.f;
+		speedy = -200.f;
 		setVelocity(speedx, speedy);
 		move(getVelocity() * dt);
 	}
 	if (input->isKeyDown(sf::Keyboard::Down))
 	{
-		speedy = -200.f;
+		speedy = 200.f;
 		setVelocity(speedx, speedy);
 		move(getVelocity() * dt);
 	}

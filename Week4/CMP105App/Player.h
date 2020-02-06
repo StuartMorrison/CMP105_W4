@@ -12,7 +12,6 @@ public:
 	~Player();
 
 	void handleInput(float dt);
-	void setInput();
 	
 };
 
