@@ -7,8 +7,9 @@ class Enemy :
 
 	double speedX;
 	double speedY;
-	int movementX;
-	int movementY;
+	float movementX;
+	float movementY;
+	sf::RenderWindow* window;
 	
 
 	Enemy();
@@ -17,7 +18,6 @@ class Enemy :
 	void update(float dt);
 	void setWindu(sf::RenderWindow* hwnd) { window = hwnd; };
 
-	sf::RenderWindow* window;
 	
 
 	

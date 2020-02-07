@@ -12,7 +12,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	testSprite.setSize(sf::Vector2f(100, 100));
 	testSprite.setPosition(100, 100);
 
-	testSprite.setInput(in);
+	testSprite.setInput(input);
 	
 
 	texture2.loadFromFile("gfx/Goomba.png");
@@ -21,7 +21,26 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	evilSprite.setSize(sf::Vector2f(50, 50));
 	evilSprite.setPosition(300, 300);
 
-	evilSprite.setWindu(hwnd);
+	evilSprite.setWindu(window);
+
+	texture3.loadFromFile("gfx/sonic.png");
+
+	minionSprite.setTexture(&texture3);
+	minionSprite.setSize(sf::Vector2f(50, 50));
+	minionSprite.setPosition(900, 50);
+	
+	minionSprite.setWindu(window);
+
+	MouseTex.loadFromFile("gfx/icon.png");
+
+	mice.setTexture(&MouseTex);
+	mice.setSize(sf::Vector2f(15, 20));
+
+	mice.setInput(input);
+
+	window->setMouseCursorVisible(false);
+
+	
 
 
 }
@@ -41,6 +60,7 @@ void Level::handleInput(float dt)
 	}
 
 	testSprite.handleInput(dt);
+	
 
 }
 
@@ -48,6 +68,8 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {	
 	evilSprite.update(dt);
+	minionSprite.update(dt);
+	mice.update(dt);
 }
 
 // Render level
@@ -57,6 +79,8 @@ void Level::render()
 
 	window->draw(testSprite);
 	window->draw(evilSprite);
+	window->draw(minionSprite);
+	window->draw(mice);
 
 	endDraw();
 }
